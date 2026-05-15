@@ -8,7 +8,8 @@ class User < ApplicationRecord
 
   # アソシエーション（1人のユーザーはたくさんの投稿を持つ）
   has_many :post_images, dependent: :destroy
-
+  has_many :post_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   # プロフィール画像を取得するためのメソッド
   # 引数(width, height)でサイズを自由に指定できるようにします
   def get_profile_image(width, height)
